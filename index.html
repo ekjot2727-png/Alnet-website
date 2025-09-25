@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALNET | Digital Platform for Alumni Engagement</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <a class="logo" href="index.html">
+            <img src="images/alnet-logo.png" alt="ALNET Logo">
+
+            <span>ALNET</span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="recruiters.html">For Recruiters</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="login.html" class="button login-btn">Login</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Connecting Generations, Building Futures</h1>
+                <p>The exclusive digital ecosystem for students and alumni of our institution. Engage, network, and grow together in a centralized, dynamic community.</p>
+                <div class="portal-choices">
+                    <a href="login.html?user=student" class="choice-card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h2>Student Portal</h2>
+                    </a>
+                    <a href="login.html?user=alumni" class="choice-card">
+                        <i class="fas fa-handshake"></i>
+                        <h2>Alumni Portal</h2>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="feedback-section">
+        <div class="container">
+            <h2>Help Us Improve</h2>
+            <p>We are constantly working to improve the ALNET platform. Your feedback is invaluable to us. Please let us know what you think!</p>
+            <form class="feedback-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="star-rating">
+                    <label>Your Rating</label>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <textarea rows="5" placeholder="Your Feedback..." required></textarea>
+                <button type="submit" class="button login-btn" style="width: 100%; margin-top: 1rem; padding: 15px;">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 ALNET, Government-University of Punjab, Jhalrapatan. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

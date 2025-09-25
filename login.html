@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ALNET</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="login-page-body">
+
+    <a class="back-button logo" href="index.html" style="position: absolute; top: 2rem; left: 2rem; background: none; border: none; padding: 0;">
+        <img src="https://i.ibb.co/L50HjH1/ALNET-Logo.png" alt="ALNET Logo">
+        <span>ALNET</span>
+    </a>
+
+    <div id="student-login-card" class="login-card" style="display: none;">
+        <i class="fas fa-user-graduate" style="font-size: 3rem; color: var(--student-accent); margin-bottom: 1rem;"></i>
+        <h1>Student Login</h1>
+        <p>Access your academic resources, career tools, and alumni network.</p>
+        <form class="form" id="student-login-form">
+            <input type="text" id="student-name-input" placeholder="Full Name" required>
+            <input type="text" placeholder="Student ID (e.g., 2024CS101)" required>
+            <input type="url" placeholder="LinkedIn Profile URL (Optional)">
+            <button type="submit" class="button login-btn login-button">Enter Portal</button>
+        </form>
+    </div>
+
+    <div id="alumni-login-card" class="login-card" style="display: none;">
+        <i class="fas fa-handshake" style="font-size: 3rem; color: var(--alumni-accent); margin-bottom: 1rem;"></i>
+        <h1>Alumni Login</h1>
+        <p>Reconnect with peers, mentor students, and explore new opportunities.</p>
+        <form class="form" action="alumni_portal.html">
+            <input type="email" placeholder="Registered Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="url" placeholder="LinkedIn Profile URL (Optional)">
+            <button type="submit" class="button login-button" style="background-color: var(--alumni-accent); color: white;">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const userType = params.get('user') || 'alumni';
+            if (userType === 'student') {
+                document.getElementById('student-login-card').style.display = 'block';
+            } else {
+                document.getElementById('alumni-login-card').style.display = 'block';
+            }
+        });
+
+        const studentForm = document.getElementById('student-login-form');
+        studentForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const studentName = document.getElementById('student-name-input').value;
+            window.location.href = `student_portal.html?name=${encodeURIComponent(studentName)}`;
+        });
+    </script>
+</body>
+</html>

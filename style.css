@@ -1,0 +1,720 @@
+/* --- :root Variables --- */
+:root {
+    --primary-color: #38BDF8;      
+    --primary-hover-color: #7DD3FC;
+    --secondary-color: #0F172A;   
+    --card-bg: #1E293B;           
+    --text-color: #CBD5E1;        
+    --heading-color: #F8FAFC;     
+    --dark-text-color: #0F172A;   
+    --border-color: #334155;      
+    --student-accent: #FB923C;
+    --alumni-accent: #6A5ACD;
+    --success-color: #22C55E;
+}
+
+/* --- General & Global Styles --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--secondary-color); 
+    color: var(--text-color); 
+    line-height: 1.7; 
+    font-size: 16px;
+}
+h1, h2, h3, .logo { 
+    font-family: 'Exo 2', sans-serif; 
+}
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 3rem 1.5rem; 
+}
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+/* --- Buttons --- */
+.button, button { 
+    cursor: pointer; 
+    border: none; 
+    padding: 12px 28px; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    transition: all 0.2s ease-in-out; 
+    display: inline-block;
+    letter-spacing: 0.5px;
+    font-family: 'Inter', sans-serif;
+}
+.login-btn { 
+    background-color: var(--primary-color); 
+    color: var(--dark-text-color); 
+}
+.login-btn:hover { 
+    background-color: var(--primary-hover-color); 
+    transform: translateY(-2px); 
+}
+
+/* --- Header & Footer --- */
+.main-header { 
+    background-color: rgba(30, 41, 59, 0.8); 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid var(--border-color); 
+    padding: 1rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+.main-header .logo { 
+    font-size: 2.2rem; 
+    color: var(--primary-color); 
+}
+.main-nav a { 
+    margin: 0 18px; 
+    color: var(--text-color); 
+    font-weight: 500; 
+    transition: color 0.2s; 
+}
+.main-nav a:hover { 
+    color: var(--primary-color); 
+}
+.main-footer { 
+    padding: 4rem 1rem; 
+    text-align: center; 
+    margin-top: 4rem; 
+    border-top: 1px solid var(--border-color); 
+}
+
+/* --- General Content & Utility Styles --- */
+.page-title { 
+    font-size: 2.2rem; 
+    margin-bottom: 2rem; 
+    color: var(--heading-color); 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 1rem; 
+}
+.content-section { 
+    background: var(--card-bg); 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    margin-bottom: 2rem; 
+    border: 1px solid var(--border-color); 
+}
+.content-section h2 { 
+    color: var(--heading-color); 
+    border-bottom: 2px solid var(--primary-color); 
+    display: inline-block; 
+    padding-bottom: 8px; 
+    margin-bottom: 1.5rem; 
+    font-size: 1.8rem; 
+}
+.list-item { 
+    background: var(--card-bg); 
+    padding: 2rem; 
+    border-radius: 12px; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid var(--border-color); 
+}
+.list-item h3 { 
+    color: var(--heading-color); 
+}
+.meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #94A3B8;
+    margin-top: 10px;
+    align-items: center;
+}
+.search-bar { 
+    width: 100%; 
+    max-width: 600px; 
+    padding: 14px; 
+    border: 1px solid var(--border-color); 
+    border-radius: 8px; 
+    font-size: 1rem; 
+    background-color: var(--secondary-color); 
+    color: var(--text-color); 
+    margin-bottom: 2rem; 
+}
+
+/* --- Homepage (index.html) --- */
+.hero { 
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto-format&fit=crop') no-repeat center center/cover; 
+    min-height: 85vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: var(--heading-color); 
+}
+.hero-content h1 { 
+    font-size: 3.8rem; 
+}
+.hero-content p { 
+    font-size: 1.25rem; 
+    margin: 1.5rem auto; 
+    max-width: 700px; 
+}
+.portal-choices { 
+    display: flex; 
+    gap: 2rem; 
+    justify-content: center; 
+    margin-top: 2.5rem; 
+}
+.choice-card { 
+    background: rgba(30, 41, 59, 0.7); 
+    backdrop-filter: blur(10px); 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color); 
+    width: 320px; 
+    transition: transform 0.3s, border-color 0.3s; 
+}
+.choice-card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--primary-color); 
+}
+.choice-card i { 
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+}
+.choice-card h2 { 
+    font-size: 1.5rem; 
+}
+.choice-card .fa-user-graduate { 
+    color: var(--student-accent); 
+}
+.choice-card .fa-handshake { 
+    color: var(--alumni-accent); 
+}
+
+/* --- Login Page (login.html) --- */
+.login-page-body { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh;
+}
+.login-card { 
+    background-color: var(--card-bg); 
+    padding: 3rem; 
+    border-radius: 16px; 
+    width: 100%; 
+    max-width: 450px; 
+    border: 1px solid var(--border-color); 
+    text-align: center; 
+}
+.login-card h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 1rem; 
+}
+.login-card p { 
+    margin-bottom: 2rem; 
+}
+.login-card .form input { 
+    width: 100%; 
+    margin-bottom: 1.2rem; 
+    padding: 14px; 
+    border: 1px solid var(--border-color); 
+    border-radius: 8px; 
+    background-color: var(--secondary-color); 
+    color: var(--text-color); 
+    font-size: 1rem; 
+    font-family: 'Inter', sans-serif;
+}
+.login-card .login-button { 
+    width: 100%; 
+    padding: 15px; 
+    font-size: 1.1rem; 
+}
+
+/* --- Portal Dashboards --- */
+.dashboard-header { 
+    padding: 3.5rem 2.5rem; 
+    border-radius: 16px; 
+    margin-bottom: 1rem; 
+    color: var(--heading-color); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+.student-header { 
+    background: linear-gradient(135deg, var(--student-accent), #D97706); 
+}
+.alumni-header { 
+    background: linear-gradient(135deg, var(--alumni-accent), #4F46E5); 
+}
+.dashboard-header h1 { 
+    font-size: 2.5rem; 
+}
+.points-widget { 
+    background: rgba(0,0,0,0.2); 
+    backdrop-filter: blur(5px); 
+    padding: 0.5rem 1rem; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    font-size: 1.1rem; 
+    flex-shrink: 0;
+}
+.points-widget .fa-star { 
+    color: #FBBF24; 
+    margin-right: 8px; 
+}
+.quick-links { 
+    margin-top: 3rem; 
+}
+.quick-links h2 { 
+    font-size: 2rem; 
+    margin-bottom: 2rem; 
+    color: var(--heading-color); 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 1rem;
+}
+.links-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 1.5rem; 
+}
+.link-item { 
+    background: var(--card-bg); 
+    padding: 2rem; 
+    border-radius: 12px; 
+    text-align: left; 
+    border: 1px solid var(--border-color); 
+    transition: transform 0.2s, border-color 0.2s; 
+}
+.link-item:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--primary-color); 
+}
+.link-item i { 
+    font-size: 1.8rem; 
+    margin-bottom: 1rem; 
+    display: block; 
+}
+.link-item span { 
+    font-family: 'Exo 2', sans-serif; 
+    font-weight: 600; 
+    display: block; 
+    font-size: 1.3rem; 
+    color: var(--heading-color); 
+    margin-bottom: 0.5rem; 
+}
+.link-item p { 
+    font-size: 0.95rem; 
+    line-height: 1.6; 
+    color: var(--text-color); 
+}
+.student-header ~ .quick-links .link-item i { 
+    color: var(--student-accent); 
+}
+.alumni-header ~ .quick-links .link-item i { 
+    color: var(--alumni-accent); 
+}
+
+/* --- Profile Cards & Mentor Match --- */
+.profile-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 2rem; 
+}
+.profile-card { 
+    background: var(--card-bg); 
+    padding: 2rem; 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color); 
+    text-align: center; 
+    position: relative; 
+    overflow: hidden; 
+}
+.profile-card img { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 1rem; 
+    border: 3px solid var(--border-color); 
+}
+.profile-card h3 { 
+    color: var(--heading-color); 
+    font-size: 1.25rem; 
+}
+.profile-card p { 
+    font-size: 0.95rem; 
+    color: var(--text-color); 
+    margin-top: 4px; 
+}
+.match-score { 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    background: var(--success-color); 
+    color: white; 
+    padding: 5px 15px; 
+    font-weight: 700; 
+    font-size: 0.9rem; 
+    border-bottom-left-radius: 12px; 
+}
+
+/* --- SIH Feature Styles --- */
+.ai-results h3 { 
+    font-size: 1.5rem; 
+    color: var(--primary-color); 
+    margin-top: 2rem; 
+    margin-bottom: 1rem; 
+}
+.credential-card { 
+    display: flex; 
+    align-items: center; 
+    gap: 2rem; 
+    margin-bottom: 1.5rem; 
+}
+.credential-card .fa-award { 
+    font-size: 4rem; 
+    color: var(--student-accent); 
+}
+.credential-info h4 { 
+    color: var(--heading-color); 
+    font-size: 1.2rem; 
+}
+.credential-info p { 
+    font-size: 0.9rem; 
+}
+.verification-info { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    color: var(--success-color); 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    margin-top: 8px; 
+}
+.verification-info code { 
+    font-size: 0.8rem; 
+    background: #334155; 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+}
+.leaderboard-list ol { 
+    list-style: none; 
+    padding: 0; 
+}
+.leaderboard-list li { 
+    display: flex; 
+    align-items: center; 
+    background: var(--card-bg); 
+    padding: 1rem 1.5rem; 
+    border-radius: 8px; 
+    margin-bottom: 1rem; 
+    border: 1px solid var(--border-color); 
+}
+.leaderboard-list .rank { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    color: var(--heading-color); 
+    width: 50px; 
+}
+.leaderboard-list .name { 
+    font-weight: 600; 
+    color: var(--text-color); 
+    flex-grow: 1; 
+}
+.leaderboard-list .points { 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    color: var(--primary-color); 
+}
+.admin-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+}
+.admin-card { 
+    background: var(--card-bg); 
+    padding: 2rem; 
+    border-radius: 12px; 
+}
+.admin-card h3 { 
+    color: var(--heading-color); 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 1rem; 
+    margin-bottom: 1.5rem; 
+}
+.stat-item { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 1.1rem; 
+    margin-bottom: 1rem; 
+}
+.stat-item .value { 
+    font-weight: 700; 
+    color: var(--heading-color); 
+}
+.chart-container .bar { 
+    height: 30px; 
+    background: var(--primary-color); 
+    margin-bottom: 10px; 
+    border-radius: 4px; 
+    display: flex; 
+    align-items: center; 
+    padding-left: 10px; 
+    color: var(--dark-text-color); 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+}
+
+/* --- Back Buttons --- */
+.back-button {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    padding: 10px 20px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.back-button:hover { 
+    background-color: var(--border-color); 
+}
+.back-button-portal {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* --- Tables --- */
+.academics-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: var(--card-bg); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid var(--border-color); 
+}
+.academics-table th, .academics-table td { 
+    padding: 1.25rem; 
+    text-align: left; 
+    border-bottom: 1px solid var(--border-color); 
+}
+.academics-table th { 
+    background-color: #2a3a53; 
+    color: var(--heading-color); 
+}
+/* Add this to the end of your style.css file */
+
+/* --- Static Pages (About, Contact, Recruiters) --- */
+.page-header { 
+    background: linear-gradient(135deg, var(--secondary-color), var(--card-bg));
+    border: 1px solid var(--border-color);
+    color: var(--heading-color);
+    padding: 5rem 1rem;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+}
+.page-header h1 { 
+    font-size: 3rem;
+}
+.map-placeholder {
+    height: 400px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* --- Homepage Feedback Section --- */
+.feedback-section {
+    background-color: var(--secondary-color);
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
+}
+.feedback-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+.feedback-section p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+.feedback-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.form-row input, .feedback-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+.star-rating {
+    margin-bottom: 1.5rem;
+}
+.star-rating label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--heading-color);
+}
+.star-rating .stars {
+    font-size: 2rem;
+    color: var(--border-color);
+    cursor: pointer;
+}
+.star-rating .stars .fa-star:hover,
+.star-rating .stars .fa-star:hover ~ .fa-star {
+    color: #FBBF24; /* Yellow star color */
+}
+/* Add this to the end of your style.css file */
+
+/* --- Professional Profile Page Layout --- */
+.profile-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+.profile-left {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+.profile-left img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+.profile-left h2 {
+    color: var(--heading-color);
+    font-size: 1.8rem;
+}
+.profile-left p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+.profile-contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+.profile-contact-info a {
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+}
+.profile-contact-info a:hover {
+    color: var(--primary-hover-color);
+}
+.profile-right {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+.profile-section {
+    margin-bottom: 2.5rem;
+}
+.profile-section:last-child {
+    margin-bottom: 0;
+}
+.profile-section h3 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-badge {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.experience-item {
+    margin-bottom: 1.5rem;
+}
+.experience-item h4 {
+    font-size: 1.1rem;
+    color: var(--heading-color);
+    font-weight: 600;
+}
+.experience-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #94A3B8;
+}
+/* --- Logo Styles --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo image and text */
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.logo img {
+    height: 40px; /* Adjust as needed */
+    width: auto;
+    vertical-align: middle;
+}
+
+.logo span {
+    font-size: 2.2rem; /* Matches existing h1/logo font size */
+    font-weight: 700;
+    line-height: 1; /* Ensures text aligns well with image */
+    color: var(--primary-color);
+}

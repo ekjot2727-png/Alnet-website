@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Admin Dashboard - ALNET</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <a class="logo" href="index.html">
+      <img src="https://i.ibb.co/L50HjH1/ALNET-Logo.png" alt="ALNET Logo">
+      <span>ALNET</span>
+    </a>
+
+    <a href="index.html" class="button login-btn">Logout</a>
+  </header>
+  <main class="container"><a href="alumni_portal.html" class="back-button-portal"><i class="fas fa-arrow-left"></i> Back
+      to Portal</a>
+    <h2 class="page-title">Institutional Analytics Dashboard</h2>
+    <div class="admin-grid">
+      <div class="admin-card">
+        <h3>Platform Overview</h3>
+        <div class="stat-item"><span>Total Alumni</span><span class="value">15,480</span></div>
+        <div class="stat-item"><span>Total Students</span><span class="value">3,250</span></div>
+        <div class="stat-item"><span>Active Mentors</span><span class="value">450</span></div>
+        <div class="stat-item"><span>Jobs Posted (Month)</span><span class="value">85</span></div>
+      </div>
+      <div class="admin-card">
+        <h3>Engagement Rate</h3>
+        <div class="stat-item"><span>Monthly Active Users</span><span class="value">4,120</span></div>
+        <div class="stat-item"><span>Profile Updates (Month)</span><span class="value">530</span></div>
+        <div class="stat-item"><span>Mentorship Requests</span><span class="value">210</span></div>
+        <div class="stat-item"><span>Donations (YTD)</span><span class="value">₹8,50,000</span></div>
+      </div>
+    </div>
+    <div class="admin-card" style="margin-top: 2rem;">
+      <h3>Top Industries for Alumni</h3>
+      <div class="chart-container">
+        <div class="bar" style="width: 90%;">IT & Software (45%)</div>
+        <div class="bar" style="width: 70%; background-color: var(--student-accent);">Engineering (20%)</div>
+        <div class="bar" style="width: 50%;">Finance (15%)</div>
+        <div class="bar" style="width: 40%; background-color: var(--alumni-accent);">Management (10%)</div>
+      </div>
+    </div>
+  </main>
+  <footer class="main-footer">
+    <p>&copy; 2025 ALNET. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

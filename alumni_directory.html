@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Alumni Directory - ALNET</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a class="logo" href="index.html">
+            <img src="https://i.ibb.co/L50HjH1/ALNET-Logo.png" alt="ALNET Logo">
+            <span>ALNET</span>
+        </a>
+
+
+        <a href="index.html" class="button login-btn">Logout</a>
+    </header>
+    <main class="container"><a href="alumni_portal.html" class="back-button-portal"><i class="fas fa-arrow-left"></i>
+            Back to Portal</a>
+        <h2 class="page-title">Alumni Directory</h2><input type="text" class="search-bar"
+            placeholder="Search by name, profession, batch, or location...">
+        <div class="profile-grid" id="alumni-profile-grid"></div>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; 2025 ALNET. All Rights Reserved.</p>
+    </footer>
+    <script>const alumniData = [{name: 'Priya Sharma', batch: 2012, role: 'Lead AI Researcher', company: 'Google', imageUrl: 'https://i.pravatar.cc/150?u=priya'}, {name: 'Rohan Gupta', batch: 2018, role: 'Founder & CEO', company: 'EcoSolutions', imageUrl: 'https://i.pravatar.cc/150?u=rohan'}, {name: 'Aisha Khan', batch: 2015, role: 'Product Manager', company: 'Microsoft', imageUrl: 'https://i.pravatar.cc/150?u=aisha'}, {name: 'Vikram Singh', batch: 2010, role: 'Investment Banker', company: 'Goldman Sachs', imageUrl: 'https://i.pravatar.cc/150?u=vikram'}, {name: 'Sunita Reddy', batch: 2020, role: 'UX/UI Designer', company: 'Adobe', imageUrl: 'https://i.pravatar.cc/150?u=sunita'}, {name: 'Arjun Mehta', batch: 2016, role: 'Civil Engineer', company: 'Larsen & Toubro', imageUrl: 'https://i.pravatar.cc/150?u=arjun'}, {name: 'Neha Desai', batch: 2019, role: 'Marketing Head', company: 'Unilever', imageUrl: 'https://i.pravatar.cc/150?u=neha'}, {name: 'Karan Malhotra', batch: 2011, role: 'Senior Architect', company: 'Hafeez Contractor', imageUrl: 'https://i.pravatar.cc/150?u=karan'}]; document.addEventListener('DOMContentLoaded', () => {const grid = document.getElementById('alumni-profile-grid'); alumniData.forEach(alumnus => {const cardHTML = `<div class="profile-card"><img src="${alumnus.imageUrl}" alt="Profile of ${alumnus.name}"><h3>${alumnus.name}</h3><p>Batch of ${alumnus.batch}</p><p>${alumnus.role}, ${alumnus.company}</p><a href="alumni_profile_view.html" class="button" style="background-color: var(--alumni-accent); color: white; margin-top: 1rem;">View Profile</a></div>`; grid.innerHTML += cardHTML;});});</script>
+</body>
+
+</html>
